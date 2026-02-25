@@ -1,0 +1,49 @@
+SQL> insert into deposit values('&actno','&cname','&bname','&amount','&adate')
+  2  insert into deposit values('&actno','&cname','&bname','&amount','&adate');
+Enter value for actno: 100
+Enter value for cname: ANIL
+Enter value for bname: VRCE
+Enter value for amount: 1000.00
+Enter value for adate: 01-MAR-95
+old   1: insert into deposit values('&actno','&cname','&bname','&amount','&adate')
+new   1: insert into deposit values('100','ANIL','VRCE','1000.00','01-MAR-95')
+Enter value for actno: 101
+Enter value for cname: SUNIL
+Enter value for bname: AJNI
+Enter value for amount: 5000.00
+Enter value for adate: 04-JAN-96
+old   2: insert into deposit values('&actno','&cname','&bname','&amount','&adate')
+new   2: insert into deposit values('101','SUNIL','AJNI','5000.00','04-JAN-96')
+insert into deposit values('101','SUNIL','AJNI','5000.00','04-JAN-96')
+*
+ERROR at line 2:
+ORA-00933: SQL command not properly ended 
+
+
+SQL> insert into deposit values('&actno','&cname','&bname','&amount','&adate');
+Enter value for actno: 101
+Enter value for cname: SUNIL
+Enter value for bname: AJNI
+Enter value for amount: 5000.00
+Enter value for adate: 04-JAN-96
+old   1: insert into deposit values('&actno','&cname','&bname','&amount','&adate')
+new   1: insert into deposit values('101','SUNIL','AJNI','5000.00','04-JAN-96')
+
+1 row created.
+
+SQL> insert into deposit values('&actno','&cname','&bname','&amount','&adate');
+Enter value for actno: 
+Enter value for cname: 
+Enter value for bname: 
+Enter value for amount: 
+Enter value for adate: 
+old   1: insert into deposit values('&actno','&cname','&bname','&amount','&adate')
+new   1: insert into deposit values('','','','','')
+insert into deposit values('','','','','')
+                           *
+ERROR at line 1:
+ORA-01400: cannot insert NULL into ("OPPAH"."DEPOSIT"."ACTNO") 
+
+
+SQL> 
+SQL> spool off
